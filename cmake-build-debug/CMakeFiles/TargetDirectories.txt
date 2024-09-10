@@ -1,0 +1,3 @@
+C:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/cmake-build-debug/CMakeFiles/CSCI_4526_Advanced_CPP.dir
+C:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
