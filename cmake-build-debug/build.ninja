@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: CSCI_4526_Advanced_CPP
+# Project: P1
 # Configurations: Debug
 # =============================================================================
 
@@ -41,59 +41,56 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target CSCI_4526_Advanced_CPP
+# Object build statements for EXECUTABLE target P1
 
 
 #############################################
-# Order-only phony target for CSCI_4526_Advanced_CPP
+# Order-only phony target for P1
 
-build cmake_object_order_depends_target_CSCI_4526_Advanced_CPP: phony || .
+build cmake_object_order_depends_target_P1: phony || .
 
-build CMakeFiles/CSCI_4526_Advanced_CPP.dir/P1/main.cpp.obj: CXX_COMPILER__CSCI_4526_Advanced_CPP_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/P1/main.cpp || cmake_object_order_depends_target_CSCI_4526_Advanced_CPP
-  DEP_FILE = CMakeFiles\CSCI_4526_Advanced_CPP.dir\P1\main.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/P1
-  OBJECT_DIR = CMakeFiles\CSCI_4526_Advanced_CPP.dir
-  OBJECT_FILE_DIR = CMakeFiles\CSCI_4526_Advanced_CPP.dir\P1
-  TARGET_COMPILE_PDB = CMakeFiles\CSCI_4526_Advanced_CPP.dir\
-  TARGET_PDB = CSCI_4526_Advanced_CPP.pdb
+build CMakeFiles/P1.dir/State.cpp.obj: CXX_COMPILER__P1_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/State.cpp || cmake_object_order_depends_target_P1
+  DEP_FILE = CMakeFiles\P1.dir\State.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\P1.dir
+  OBJECT_FILE_DIR = CMakeFiles\P1.dir
+  TARGET_COMPILE_PDB = CMakeFiles\P1.dir\
+  TARGET_PDB = P1.pdb
 
-build CMakeFiles/CSCI_4526_Advanced_CPP.dir/P1/State.cpp.obj: CXX_COMPILER__CSCI_4526_Advanced_CPP_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/P1/State.cpp || cmake_object_order_depends_target_CSCI_4526_Advanced_CPP
-  DEP_FILE = CMakeFiles\CSCI_4526_Advanced_CPP.dir\P1\State.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/P1
-  OBJECT_DIR = CMakeFiles\CSCI_4526_Advanced_CPP.dir
-  OBJECT_FILE_DIR = CMakeFiles\CSCI_4526_Advanced_CPP.dir\P1
-  TARGET_COMPILE_PDB = CMakeFiles\CSCI_4526_Advanced_CPP.dir\
-  TARGET_PDB = CSCI_4526_Advanced_CPP.pdb
+build CMakeFiles/P1.dir/tools.cpp.obj: CXX_COMPILER__P1_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/tools.cpp || cmake_object_order_depends_target_P1
+  DEP_FILE = CMakeFiles\P1.dir\tools.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\P1.dir
+  OBJECT_FILE_DIR = CMakeFiles\P1.dir
+  TARGET_COMPILE_PDB = CMakeFiles\P1.dir\
+  TARGET_PDB = P1.pdb
 
-build CMakeFiles/CSCI_4526_Advanced_CPP.dir/P1/tools.cpp.obj: CXX_COMPILER__CSCI_4526_Advanced_CPP_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/P1/tools.cpp || cmake_object_order_depends_target_CSCI_4526_Advanced_CPP
-  DEP_FILE = CMakeFiles\CSCI_4526_Advanced_CPP.dir\P1\tools.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/P1
-  OBJECT_DIR = CMakeFiles\CSCI_4526_Advanced_CPP.dir
-  OBJECT_FILE_DIR = CMakeFiles\CSCI_4526_Advanced_CPP.dir\P1
-  TARGET_COMPILE_PDB = CMakeFiles\CSCI_4526_Advanced_CPP.dir\
-  TARGET_PDB = CSCI_4526_Advanced_CPP.pdb
+build CMakeFiles/P1.dir/main.cpp.obj: CXX_COMPILER__P1_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/main.cpp || cmake_object_order_depends_target_P1
+  DEP_FILE = CMakeFiles\P1.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\P1.dir
+  OBJECT_FILE_DIR = CMakeFiles\P1.dir
+  TARGET_COMPILE_PDB = CMakeFiles\P1.dir\
+  TARGET_PDB = P1.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target CSCI_4526_Advanced_CPP
+# Link build statements for EXECUTABLE target P1
 
 
 #############################################
-# Link the executable CSCI_4526_Advanced_CPP.exe
+# Link the executable P1.exe
 
-build CSCI_4526_Advanced_CPP.exe: CXX_EXECUTABLE_LINKER__CSCI_4526_Advanced_CPP_Debug CMakeFiles/CSCI_4526_Advanced_CPP.dir/P1/main.cpp.obj CMakeFiles/CSCI_4526_Advanced_CPP.dir/P1/State.cpp.obj CMakeFiles/CSCI_4526_Advanced_CPP.dir/P1/tools.cpp.obj
+build P1.exe: CXX_EXECUTABLE_LINKER__P1_Debug CMakeFiles/P1.dir/State.cpp.obj CMakeFiles/P1.dir/tools.cpp.obj CMakeFiles/P1.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\CSCI_4526_Advanced_CPP.dir
+  OBJECT_DIR = CMakeFiles\P1.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\CSCI_4526_Advanced_CPP.dir\
-  TARGET_FILE = CSCI_4526_Advanced_CPP.exe
-  TARGET_IMPLIB = libCSCI_4526_Advanced_CPP.dll.a
-  TARGET_PDB = CSCI_4526_Advanced_CPP.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\P1.dir\
+  TARGET_FILE = P1.exe
+  TARGET_IMPLIB = libP1.dll.a
+  TARGET_PDB = P1.pdb
 
 
 #############################################
@@ -121,7 +118,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build CSCI_4526_Advanced_CPP: phony CSCI_4526_Advanced_CPP.exe
+build P1: phony P1.exe
 
 # =============================================================================
 # Folder targets.
@@ -131,7 +128,7 @@ build CSCI_4526_Advanced_CPP: phony CSCI_4526_Advanced_CPP.exe
 #############################################
 # Folder: C:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/cmake-build-debug
 
-build all: phony CSCI_4526_Advanced_CPP.exe
+build all: phony P1.exe
 
 # =============================================================================
 # Built-in targets

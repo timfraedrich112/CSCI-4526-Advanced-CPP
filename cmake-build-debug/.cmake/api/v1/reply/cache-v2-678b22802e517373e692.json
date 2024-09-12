@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/CSCI_4526_Advanced_CPP"
+			"value" : "C:/Program Files (x86)/P1"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -875,7 +875,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "CSCI_4526_Advanced_CPP"
+			"value" : "P1"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1270,7 +1270,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "CSCI_4526_Advanced_CPP_BINARY_DIR",
+			"name" : "P1_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1282,7 +1282,7 @@
 			"value" : "C:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/cmake-build-debug"
 		},
 		{
-			"name" : "CSCI_4526_Advanced_CPP_IS_TOP_LEVEL",
+			"name" : "P1_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1294,7 +1294,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "CSCI_4526_Advanced_CPP_SOURCE_DIR",
+			"name" : "P1_SOURCE_DIR",
 			"properties" : 
 			[
 				{

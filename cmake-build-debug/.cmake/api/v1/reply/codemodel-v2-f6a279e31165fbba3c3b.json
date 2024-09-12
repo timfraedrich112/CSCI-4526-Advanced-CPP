@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "CSCI_4526_Advanced_CPP",
+					"name" : "P1",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "CSCI_4526_Advanced_CPP::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CSCI_4526_Advanced_CPP-Debug-d28f05546aaf8c43e004.json",
-					"name" : "CSCI_4526_Advanced_CPP",
+					"id" : "P1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-P1-Debug-a82cb96da36c03958a23.json",
+					"name" : "P1",
 					"projectIndex" : 0
 				}
 			]
