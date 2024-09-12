@@ -1,5 +1,5 @@
-//State.cpp 
-//Tim Fraedrich & Chidi Nna
+//State.cpp
+//Tim Fraedrich & Chidi Nna.
 #include "State.hpp"
 
 State::State(char input) {
