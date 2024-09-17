@@ -5,7 +5,7 @@
 
 class State {
 private:                 // All members private for encapsulation
-	short possibilities;
+	short numbers;
 	char value;
 	bool fixed;
 public:
@@ -15,8 +15,7 @@ public:
 	void Mark(char ch); // mark(char ch)
 	ostream& Print(ostream& out);
 
-    void setPossibilities(short newPossibilities) { possibilities = newPossibilities; }
-    short getPossibilities() { return possibilities; }
+    short getNumbers() { return numbers; }
 	char getValue() { return value; }
 
 };
@@ -29,12 +28,13 @@ private:
 	State state;
 	short row, column;
 public:
-	Square() = default;  //A default null constructor.
-	Square(char value, short row, short column);
-	~Square();
-	void Mark(char ch);
+	Square() = default;  // A default null constructor.
+	Square(char value, short row, short column); // A constructor with three parameters
+	~Square(); // A destructor.
+	void Mark(char ch); // A public function that calls State’s mark function
 	ostream& Print(ostream& out);
 };
 
-//method for print( ostream&) that prints all data in the State in a readable format
+//method for print( ostream&) that prints all data in the Square and State class
 inline ostream& operator << (ostream& out, Square& s) { return s.Print(out); }
+

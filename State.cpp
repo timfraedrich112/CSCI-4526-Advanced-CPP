@@ -3,44 +3,48 @@
 //Tim Fraedrich & Chidi Nna.
 #include "State.hpp"
 
-State::State(char input) {
-	value = input;
+State::State(char input)
+	: value(input) {
 	if (value == '-') {
-		possibilities = 0x3fe;
+		numbers = 0x3fe;
 		fixed = false;
 	} else if (value > '0' && value <= '9') {
-		possibilities = 0;
+		numbers = 0;
 		fixed = true;
-	}
+	} else {
+       cerr << "Error: Invalid input character '" << input << "' for State." << endl;
+   }
 }
 
 void State::Mark(char ch) {
-	if (fixed) { cout << "Square is fixed" << endl; return; }
-	value = ch;
+    if (fixed) {
+        cerr << "Error: Cannot mark fixed square." << endl;
+        return;  // Prevent marking the value
+    }
+    value = ch;
+    numbers = 0;  // Reset possibilities after marking
 }
 
 ostream& State::Print(ostream& out) {
-	out << "Value: " << value << endl;
-	out << "Fixed: " << boolalpha << fixed << endl;
-	out << "Possibilities: ";
-	short num = possibilities;
-	for (int n = 1; n <= 9; ++n) {
-		num = num >> 1;
-		if (num % 2) out << n;
+	out << "Value: " << value << '\t';
+	out << "Fixed: " << boolalpha << fixed << '\t';
+	out << "numbers: ";
+	short num = numbers;
+	for (int n = 1; n <= 9; n++) {
+		num >>= 1;
+		if (num & 1) out << n;
 		else out << '-';
 	}
 	out << endl;
 	return out;
 }
 
-Square::Square(char value, short inputRow, short inputColumn) : state(value) {
-	row = inputRow;
-	column = inputColumn;
-	cerr << "Square ( " << row << ", " << column << " ) created" << endl;
+Square::Square(char value, short inputRow, short inputColumn) : state(value), row(inputRow), column(inputColumn) {
+	cout << "Square (" << row << ", " << column << ") created" << endl;
 }
 
 Square::~Square() {
-	cerr << "Deleting Square ( " << row << ", " << column << " )" << endl;
+	cout << "Deleting Square (" << row << ", " << column << ")" << endl;
 }
 
 void Square::Mark(char ch) {
@@ -48,7 +52,8 @@ void Square::Mark(char ch) {
 }
 
 ostream& Square::Print(ostream& out) {
-	out << "Square ( " << row << ", " << column << " )" << endl;
+	out << "Square: (" << row << ", " << column << ")" << '\t';
 	state.Print(out);
 	return out;
 }
+
