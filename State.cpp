@@ -1,4 +1,5 @@
 //State.cpp
+//State and Square Class
 //Tim Fraedrich & Chidi Nna.
 #include "State.hpp"
 
@@ -29,5 +30,25 @@ ostream& State::Print(ostream& out) {
 		else out << '-';
 	}
 	out << endl;
+	return out;
+}
+
+Square::Square(char value, short inputRow, short inputColumn) : state(value) {
+	row = inputRow;
+	column = inputColumn;
+	cerr << "Square ( " << row << ", " << column << " ) created" << endl;
+}
+
+Square::~Square() {
+	cerr << "Deleting Square ( " << row << ", " << column << " )" << endl;
+}
+
+void Square::Mark(char ch) {
+	state.Mark(ch);
+}
+
+ostream& Square::Print(ostream& out) {
+	out << "Square ( " << row << ", " << column << " )" << endl;
+	state.Print(out);
 	return out;
 }
