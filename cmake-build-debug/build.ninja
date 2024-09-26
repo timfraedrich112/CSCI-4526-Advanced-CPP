@@ -49,12 +49,6 @@ cmake_ninja_workdir = C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/cm
 
 build cmake_object_order_depends_target_P1: phony || .
 
-build CMakeFiles/P1.dir/State.cpp.obj: CXX_COMPILER__P1_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/State.cpp || cmake_object_order_depends_target_P1
-  DEP_FILE = CMakeFiles\P1.dir\State.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\P1.dir
-  OBJECT_FILE_DIR = CMakeFiles\P1.dir
-
 build CMakeFiles/P1.dir/tools.cpp.obj: CXX_COMPILER__P1_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/tools.cpp || cmake_object_order_depends_target_P1
   DEP_FILE = CMakeFiles\P1.dir\tools.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
@@ -73,6 +67,18 @@ build CMakeFiles/P1.dir/Game.cpp.obj: CXX_COMPILER__P1_unscanned_Debug C$:/Users
   OBJECT_DIR = CMakeFiles\P1.dir
   OBJECT_FILE_DIR = CMakeFiles\P1.dir
 
+build CMakeFiles/P1.dir/Square.cpp.obj: CXX_COMPILER__P1_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/Square.cpp || cmake_object_order_depends_target_P1
+  DEP_FILE = CMakeFiles\P1.dir\Square.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\P1.dir
+  OBJECT_FILE_DIR = CMakeFiles\P1.dir
+
+build CMakeFiles/P1.dir/Board.cpp.obj: CXX_COMPILER__P1_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/Board.cpp || cmake_object_order_depends_target_P1
+  DEP_FILE = CMakeFiles\P1.dir\Board.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\P1.dir
+  OBJECT_FILE_DIR = CMakeFiles\P1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target P1
@@ -81,7 +87,7 @@ build CMakeFiles/P1.dir/Game.cpp.obj: CXX_COMPILER__P1_unscanned_Debug C$:/Users
 #############################################
 # Link the executable P1.exe
 
-build P1.exe: CXX_EXECUTABLE_LINKER__P1_Debug CMakeFiles/P1.dir/State.cpp.obj CMakeFiles/P1.dir/tools.cpp.obj CMakeFiles/P1.dir/main.cpp.obj CMakeFiles/P1.dir/Game.cpp.obj
+build P1.exe: CXX_EXECUTABLE_LINKER__P1_Debug CMakeFiles/P1.dir/tools.cpp.obj CMakeFiles/P1.dir/main.cpp.obj CMakeFiles/P1.dir/Game.cpp.obj CMakeFiles/P1.dir/Square.cpp.obj CMakeFiles/P1.dir/Board.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\P1.dir

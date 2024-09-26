@@ -1,8 +1,8 @@
 //State.hpp
 //State and Square Class
 //Tim Fraedrich & Chidi Nna
-#ifndef STATE_HPP
-#define STATE_HPP
+#ifndef SQUARE_HPP
+#define SQUARE_HPP
 #include "tools.hpp"
 
 class State {

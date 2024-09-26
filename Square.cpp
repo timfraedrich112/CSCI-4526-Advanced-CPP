@@ -1,7 +1,7 @@
 //State.cpp
 //State and Square Class
 //Tim Fraedrich & Chidi Nna.
-#include "State.hpp"
+#include "Square.hpp"
 
 State::State(char input)
 	: value(input) {
@@ -30,9 +30,9 @@ ostream& State::Print(ostream& out) {
 	out << "Fixed: " << boolalpha << fixed << '\t';
 	out << "numbers: ";
 	short num = numbers;
-	for (int n = 1; n <= 9; n++) {
+	for (int k = 1; k <= 9; ++k) {
 		num >>= 1;
-		if (num & 1) out << n;
+		if (num & 1) out << k;
 		else out << '-';
 	}
 	out << endl;

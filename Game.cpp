@@ -6,8 +6,11 @@
 
 Game::Game(ifstream& inputFile) : in(inputFile) {
     in >> gameType;
+    gameBoard = new Board(in, gameType);
     if (legalCodes.find(gameType) == string::npos) fatal(string("Invalid game type code: ") += gameType);
 }
+
+Game::~Game() { delete gameBoard; }
 
 void Game::Run() {
     char selection;

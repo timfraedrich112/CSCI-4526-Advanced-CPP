@@ -1,7 +1,7 @@
 // Project2.cpp
 // Tim Fraedrich & Chidi Nna
 #include "tools.hpp"
-#include "State.hpp"
+#include "Square.hpp"
 #include "Game.hpp"
 
 // test State class
@@ -58,12 +58,14 @@ int main(int argc, char* argv[]) {
     ifstream input(argv[1]);  // argv[0] is the name of the program.
     if (!input.is_open()) fatal(string("Cannot open text file ") + argv[1]);
 
-    Game game(input);
-    game.Run();
-
-    //Call the unit tests
+    // Call the unit tests
     //testState();
     //testSquare();
+    //testBoard(input);
+
+    cout << "STARTING" << endl;
+    Game game(input);
+    //game.Run();
 
     input.close();
     bye();  // Print exit

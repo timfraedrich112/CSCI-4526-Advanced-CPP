@@ -4,9 +4,8 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 #include "tools.hpp"
-#include "State.hpp"
-
-class Board;
+#include "Board.hpp"
+#include "Square.hpp"
 
 class Game {
 private:
@@ -15,12 +14,13 @@ private:
     const string menuItems[6] = {"M: Mark", "U: Undo", "R: Redo", "S: Save Game", "L: Load Game", "Q: Quit and Discard Game"};
     const string legalCodes = "tTdDsS";
     const string legalSelections = "mMuUrRsSlLqQ";
-    Board* board;
+    Board* gameBoard;
     char gameType;
     short gameSize;
     ifstream& in;
 public:
     Game(ifstream& inputFile);
+    ~Game();
     void Run();
 };
 
