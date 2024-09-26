@@ -1,6 +1,8 @@
 //State.hpp
 //State and Square Class
 //Tim Fraedrich & Chidi Nna
+#ifndef STATE_HPP
+#define STATE_HPP
 #include "tools.hpp"
 
 class State {
@@ -25,7 +27,7 @@ inline ostream& operator << (ostream& out, State& s) { return s.Print(out); }
 
 class Square {
 private:
-	State state;
+	State s;
 	short row, column;
 public:
 	Square() = default;  // A default null constructor.
@@ -38,3 +40,4 @@ public:
 //method for print( ostream&) that prints all data in the Square and State class
 inline ostream& operator << (ostream& out, Square& s) { return s.Print(out); }
 
+#endif

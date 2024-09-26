@@ -2,6 +2,7 @@
 // Tim Fraedrich & Chidi Nna
 #include "tools.hpp"
 #include "State.hpp"
+#include "Game.hpp"
 
 // test State class
 void testState() {
@@ -52,10 +53,19 @@ void testSquare() {
 int main(int argc, char* argv[]) {
     banner();  // Print the banner
 
-    // Call the unit tests
-    testState();
-    testSquare();
+    // Open and check file from command line
+    if (argc != 2) fatal(string("Usage: ") + argv[0] + " filename.txt");
+    ifstream input(argv[1]);  // argv[0] is the name of the program.
+    if (!input.is_open()) fatal(string("Cannot open text file ") + argv[1]);
 
+    Game game(input);
+    game.Run();
+
+    //Call the unit tests
+    //testState();
+    //testSquare();
+
+    input.close();
     bye();  // Print exit
     return 0;
 }

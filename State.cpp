@@ -39,7 +39,8 @@ ostream& State::Print(ostream& out) {
 	return out;
 }
 
-Square::Square(char value, short inputRow, short inputColumn) : state(value), row(inputRow), column(inputColumn) {
+Square::Square(char value, short inputRow, short inputColumn)
+	: s(value), row(inputRow), column(inputColumn) {
 	cout << "Square (" << row << ", " << column << ") created" << endl;
 }
 
@@ -48,12 +49,11 @@ Square::~Square() {
 }
 
 void Square::Mark(char ch) {
-	state.Mark(ch);
+	s.Mark(ch);
 }
 
 ostream& Square::Print(ostream& out) {
-	out << "Square: (" << row << ", " << column << ")" << '\t';
-	state.Print(out);
+	out << "Square: (" << row << ", " << column << ") " << s << '\t';
 	return out;
 }
 

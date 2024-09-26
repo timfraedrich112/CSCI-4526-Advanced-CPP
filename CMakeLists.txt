@@ -8,4 +8,6 @@ add_executable(P1
         State.hpp
         tools.cpp
         tools.hpp
-        main.cpp)
+        main.cpp
+        Game.cpp
+        Game.hpp)
