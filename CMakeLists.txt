@@ -12,4 +12,5 @@ add_executable(P1
         Square.cpp
         Square.hpp
         Board.cpp
-        Board.hpp)
+        Board.hpp
+        Cluster.cpp)

@@ -4,6 +4,9 @@
 #ifndef SQUARE_HPP
 #define SQUARE_HPP
 #include "tools.hpp"
+#include "Cluster.hpp"
+
+class Cluster;
 
 class State {
 private:                 // All members private for encapsulation

@@ -81,7 +81,6 @@ void TestBoard(ifstream& input, ofstream& outputFile) {
 
 int main(int argc, char* argv[]) {
     banner();  // Print the banner
-    for (int i = 0; i < argc; ++i) cout << argv[i] << endl; 
 
     // Open and check file from command line
     if (argc != 3) fatal(string("Usage: ") + argv[0] + " inputFileName.txt outputFileName.txt");
