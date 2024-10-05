@@ -8,6 +8,7 @@ Game::Game(ifstream& inputFile) : in(inputFile) {
     in >> gameType;
     gameBoard = new Board(in, gameType);
     if (legalCodes.find(gameType) == string::npos) fatal(string("Invalid game type code: ") += gameType);
+    cout << *gameBoard << endl;
 }
 
 Game::~Game() { delete gameBoard; }
@@ -35,7 +36,7 @@ void Game::Run() {
             case 'q': //quit
                 cout << endl << "Now exiting." << endl;
                 break;
-            default: cerr << "Invalid menu item selected" << endl;
+            default: cout << "Invalid menu item selected" << endl; //cerr
                 break;
         }
     } while (selection != 'q');

@@ -13,7 +13,7 @@ private:
     Square* bd;
     short unmarked;
     void GetPuzzle();
-    Square& Subscript(int row, int column);
+    Square& Sub(int row, int column);
 public:
     Board(ifstream& in, char type);
     ~Board();

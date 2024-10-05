@@ -5,6 +5,7 @@
 #include "Board.hpp"
 
 Board::Board(ifstream& inputFile, char type) : in(inputFile) {
+    cout << "Board constructor started" << endl;
     if (tolower(type) == 't' || tolower(type) == 'd') n = 9;
     else if (tolower(type == 's')) n = 6;
     else fatal(string("Invalid type: ") += type);
@@ -12,45 +13,45 @@ Board::Board(ifstream& inputFile, char type) : in(inputFile) {
     bd = new Square[n * n];
     unmarked = n * n;
     GetPuzzle();
-    cout << "Constructor Finished!" << endl;
+    cout << "Board constructor finished" << endl;
 }
 
 Board::~Board() {
+    cout << "Deleting board" << endl; //cerr
     delete[] bd;
-    cerr << "Deleting board" << endl;
 }
 
 void Board::GetPuzzle() {
-    char num;
+    char input;
     for (int j = 1; j <= n; ++j) {
         for (int k = 1; k <= n; ++k) {
-            cout << n * (j - 1) + (k - 1) << ": ";
-            in >> num;
-            cout << num;
-            if ((num == '-') || (num > '0' && num <= '9'))
-                Subscript(j, k) = Square(num, j, k);
-            else fatal(string("Invalid number inside square") += num);
+            in >> input;
+            cout << n * (j - 1) + (k - 1) << ": " << input << ", ";
+            if ((input == '-') || (input > '0' && input <= '9'))
+                Sub(j, k) = Square(input, j, k);
+            else fatal(string("Invalid number inside square") += input);
         }
-        //in >> num;
-        //if (num == '\n') cout << "new line success" << endl; //for testing can be removed later
-        //else fatal("did not find new line");
+        in.get(input);
+        if (input == '\n') cout << "new line success" << endl; //for testing can be removed later
+        else fatal("did not find new line");
     }
-    //in >> num;
-    //if (in.eof()) cout << "end of file success" << endl; //for testing can be removed later
-    //else fatal("did not find eof");
+    in >> input;
+    if (in.eof()) cout << "end of file success" << endl; //for testing can be removed later
+    else fatal("did not find eof");
 }
 
-Square& Board::Subscript(int row, int column) {
+Square& Board::Sub(int row, int column) {
     return bd[n * (row - 1) + (column - 1)];
 }
 
 ostream& Board::Print(ostream& out) {
-    out << "PRINTING" << endl;
+    out << "Printing board:" << endl;
     for (int j = 1; j <= n; ++j) {
         for (int k = 1; k <= n; ++k) {
-            Subscript(j, k).Print(out);
+            out << Sub(j,k) << endl;
         }
         out << endl;
     }
+    out << "Finished printing board" << endl;
     return out;
 }

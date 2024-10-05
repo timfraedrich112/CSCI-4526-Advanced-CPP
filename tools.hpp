@@ -7,8 +7,8 @@
 // Please enter your own name and class.
 // -------------------------------------------------------------------
 #pragma once
-#define NAME    "Patience S. Goodenough"
-#define CLASS   "CPSC 427/527"
+#define NAME    "Tim Fraedrich & Chidi Nna"
+#define CLASS   "CSCI 4526 Advanced C++"
 
 #include <iostream>
 #include <fstream>

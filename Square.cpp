@@ -12,13 +12,13 @@ State::State(char input)
 		numbers = 0;
 		fixed = true;
 	} else {
-       cerr << "Error: Invalid input character '" << input << "' for State." << endl;
+       cout << "Error: Invalid input character '" << input << "' for State." << endl; //cerr
    }
 }
 
 void State::Mark(char ch) {
     if (fixed) {
-        cerr << "Error: Cannot mark fixed square." << endl;
+        cout << "Error: Cannot mark fixed square." << endl; //cerr
         return;  // Prevent marking the value
     }
     value = ch;
@@ -26,16 +26,15 @@ void State::Mark(char ch) {
 }
 
 ostream& State::Print(ostream& out) {
-	out << "Value: " << value << '\t';
-	out << "Fixed: " << boolalpha << fixed << '\t';
-	out << "numbers: ";
+	out << "Value: " << value << "\t\t";
+	out << "Fixed:  " << boolalpha << fixed << '\t';
+	out << "Possibilities: ";
 	short num = numbers;
 	for (int k = 1; k <= 9; ++k) {
 		num >>= 1;
 		if (num & 1) out << k;
 		else out << '-';
 	}
-	out << endl;
 	return out;
 }
 
@@ -53,7 +52,7 @@ void Square::Mark(char ch) {
 }
 
 ostream& Square::Print(ostream& out) {
-	out << "Square: (" << row << ", " << column << ") " << s << '\t';
+	out << "Square: (" << row << ", " << column << ") \t" << s << '\t';
 	return out;
 }
 
