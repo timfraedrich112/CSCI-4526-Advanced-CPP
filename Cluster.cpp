@@ -4,7 +4,15 @@
 
 #include "Cluster.hpp"
 
-Cluster::Cluster(const char* clusterType, Square** s) {
+Cluster::Cluster(ClusterType cl, Square* inputSquares[])
+    : type(cl) {
+    switch (cl) {
+        case ClusterType::Box: typeName = clusterTypeStrings[0].c_str(); break;
+        case ClusterType::Column: typeName = clusterTypeStrings[1].c_str(); break;
+        case ClusterType::Row: typeName = clusterTypeStrings[2].c_str(); break;
+        default: fatal("Unknown cluster type");
+    }
+
     //Square::AddCluster() for each square added to cluster (needs "this")
 
 }
@@ -18,5 +26,10 @@ void Cluster::Shoop(char val) {
 }
 
 ostream& Cluster::Print(ostream& out) {
+    out << typeName << ": " << endl;
+    for (int k = 0; k < 9; k++) {
+        out << *s << endl;
+    }
+    out << endl;
     return out;
 }

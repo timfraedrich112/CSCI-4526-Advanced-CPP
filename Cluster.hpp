@@ -12,10 +12,11 @@ static constexpr string clusterTypeStrings[3] = {"Box", "Column", "Row"};
 
 class Cluster {
 private:
-    const char* clusterType;
+    const char* typeName;
+    ClusterType type;
     Square* s[9];
 public:
-    Cluster(const char* clusterType, Square** s);
+    Cluster(ClusterType cl, Square* inputSquares[]);
     void Shoop(char val);
     ostream& Print(ostream& out);
 };

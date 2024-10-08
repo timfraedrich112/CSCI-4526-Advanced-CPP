@@ -25,8 +25,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2536725f-99a3-4534-ac8f-d3da2c4b0fba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Square.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Square.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cluster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cluster.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,12 +86,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="P1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\puz1.txt C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\output.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P1" TARGET_NAME="P1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P1" RUN_TARGET_NAME="P1">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="P1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\puz1.txt C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\output.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P1" TARGET_NAME="P1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P1" RUN_TARGET_NAME="P1">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -116,7 +117,8 @@
       <workItem from="1727401540442" duration="3404000" />
       <workItem from="1727453949820" duration="67000" />
       <workItem from="1727796805243" duration="6563000" />
-      <workItem from="1728089887063" duration="1042000" />
+      <workItem from="1728089887063" duration="1218000" />
+      <workItem from="1728408625472" duration="2200000" />
     </task>
     <servers />
   </component>
