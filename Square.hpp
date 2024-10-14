@@ -1,46 +1,63 @@
-//State.hpp
-//State and Square Class
+//Square.hpp
 //Tim Fraedrich & Chidi Nna
 #ifndef SQUARE_HPP
 #define SQUARE_HPP
+
 #include "tools.hpp"
 #include "Cluster.hpp"
 
-class Cluster;
+class Cluster; // Forward declaration of Cluster
 
 class State {
-private:                 // All members private for encapsulation
-	short numbers;
-	char value;
-	bool fixed;
+private:
+    short numbers;
+    char value;
+    bool fixed;
 public:
-	State() = default;  // A default null constructor.
-	State(char input); // A constructor with a char parameter
-	~State() = default;  // A default destructor.
-	void Mark(char ch); // mark(char ch)
-	ostream& Print(ostream& out);
+    State() = default;
+    State(char input);
+    ~State() = default;
+    void Mark(char ch);
+    std::ostream& Print(std::ostream& out);
+
 
     short getNumbers() { return numbers; }
-	char getValue() { return value; }
+    char getValue() { return value; }
+    void setNumbers(short num) { numbers = num; }  // Setter for numbers
 
 };
 
-//method for print( ostream&) that prints all data in the State in a readable format
-inline ostream& operator << (ostream& out, State& s) { return s.Print(out); }
+//prints all data in the State in a readable format
+inline std::ostream& operator<<(std::ostream& out, State& s) {
+    return s.Print(out);
+}
 
 class Square {
 private:
-	State s;
-	short row, column;
+    State s;  // The state of the square
+    short row, column;  // Row and column position of the square
+    std::vector<Cluster*> clusters;  // Vector to store pointers to Cluster objects
+
 public:
-	Square() = default;  // A default null constructor.
-	Square(char value, short row, short column); // A constructor with three parameters
-	~Square(); // A destructor.
-	void Mark(char ch); // A public function that calls State’s mark function
-	ostream& Print(ostream& out);
+    Square() = default;
+    Square(char value, short row, short column);
+    ~Square();
+
+    void Mark(char ch);  // Mark function to mark the square
+    std::ostream& Print(std::ostream& out);  // Print function
+
+    // Function to add a Cluster pointer to the vector of clusters
+    inline void addCluster(Cluster* cluster) { clusters.push_back(cluster); }
+
+    // Function to loop through all Clusters and call Cluster::Shoop()
+    void Shoop(char val);
+
+    State& getState() { return s; }
+
 };
 
-//method for print( ostream&) that prints all data in the Square and State class
-inline ostream& operator << (ostream& out, Square& s) { return s.Print(out); }
+// Inline operator to print Square object easily
+inline std::ostream& operator<<(std::ostream& out, Square& s) { return s.Print(out); }
 
-#endif
+#endif  // SQUARE_HPP
+

@@ -1,7 +1,5 @@
 //Game.cpp
-//Game Class
 //Tim Fraedrich & Chidi Nna
-
 #include "Game.hpp"
 
 Game::Game(ifstream& inputFile) : in(inputFile) {

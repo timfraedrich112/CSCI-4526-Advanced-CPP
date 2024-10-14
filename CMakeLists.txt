@@ -1,16 +1,19 @@
 cmake_minimum_required(VERSION 3.29)
-project(P1)
+project(P5)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 14)
 
-add_executable(P1
-        tools.cpp
-        tools.hpp
-        main.cpp
-        Game.cpp
-        Game.hpp
-        Square.cpp
-        Square.hpp
-        Board.cpp
-        Board.hpp
-        Cluster.cpp)
+include_directories(.)
+
+add_executable(P5
+    Board.cpp
+    Board.hpp
+    Cluster.cpp
+    Cluster.hpp
+    Game.cpp
+    Game.hpp
+    main.cpp
+    Square.cpp
+    Square.hpp
+    tools.cpp
+    tools.hpp)

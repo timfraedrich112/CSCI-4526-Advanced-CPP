@@ -1,5 +1,4 @@
 //Game.hpp
-//Game Class
 //Tim Fraedrich & Chidi Nna
 #ifndef GAME_HPP
 #define GAME_HPP

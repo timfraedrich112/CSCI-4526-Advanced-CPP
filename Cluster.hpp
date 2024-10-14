@@ -1,26 +1,36 @@
 //Cluster.hpp
-//Cluster Class
 //Tim Fraedrich & Chidi Nna
-
 #ifndef CLUSTER_HPP
 #define CLUSTER_HPP
-#include "tools.hpp"
-#include "Square.hpp"
 
-enum class ClusterType { Box, Column, Row };
-static constexpr string clusterTypeStrings[3] = {"Box", "Column", "Row"};
+#include "tools.hpp"
+
+class Square;
+
+enum class ClusterT {   //ClusterType is needed to clearly differentiate between the three types of
+	                       //clusters in the Sudoku-like game (Rows, Columns, and Boxes)
+    Row,
+    Column,
+    Box
+};
+
+static const string clusterTypeNames[3] = {"Row", "Column", "Box"};
 
 class Cluster {
 private:
-    const char* typeName;
-    ClusterType type;
-    Square* s[9];
+    ClusterT type;
+    string typeName;
+    Square* squares[9];  // Array of Square pointers
+
 public:
-    Cluster(ClusterType cl, Square* inputSquares[]);
+    Cluster(ClusterT cl, Square* inputSquares[]);  // Constructor with Square
+    ~Cluster() = default;
+
     void Shoop(char val);
-    ostream& Print(ostream& out);
+    std::ostream& Print(std::ostream& out);
 };
 
-inline ostream& operator << (ostream& out, Cluster& c) { return c.Print(out); }
+// Overload the << operator for Cluster
+inline std::ostream& operator<<(std::ostream& out, Cluster& c) { return c.Print(out); }
 
-#endif //CLUSTER_HPP
+#endif  // CLUSTER_HPP

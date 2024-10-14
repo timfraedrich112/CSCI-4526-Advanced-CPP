@@ -24,7 +24,7 @@ flush( istream& is ) {
 // Reset formatting style from fixed or scientific back to default.
 // Use: cout <<fixed <<x <<general <<y;
 ostream& general( ostream& os ){
-	os.unsetf( ios::floatfield );	
+	os.unsetf( ios::floatfield );
 	return os;
 }
 
@@ -36,7 +36,7 @@ fbanner( ostream& fout ) {
     string date, time;
     when(date, time);
     fout << "\n----------------------------------------------------------------\n"
-         << "\t" << NAME 
+         << "\t" << NAME
          << "\n\t" << CLASS << "\n\t" <<  date << "\t" << time << endl
          << "----------------------------------------------------------------\n";
 }
@@ -50,7 +50,7 @@ void bye( void ) { cerr << "\nNormal termination.\n" ; }
 // -------------------------------------------------------------------
 // This function is for error messages.
 //    It takes a format argument priored by any number of data arguments.
-//    It formats and prints an error message, then exits.                
+//    It formats and prints an error message, then exits.
 void
 fatal (const string& msg) {
     cout << flush;
@@ -63,9 +63,9 @@ fatal (const string& msg) {
 //  Routines for handling the time and date.
 // -------------------------------------------------------------------
 // Store the current date and time in the arguments.
-//      System's date format is: "Fri Jun  9 10:15:55 1995\n"  
-//      After extraction, date is: "Fri Jun  9 1995"    hour is: "10:15:55" 
-void 
+//      System's date format is: "Fri Jun  9 10:15:55 1995\n"
+//      After extraction, date is: "Fri Jun  9 1995"    hour is: "10:15:55"
+void
 when( string& date, string& hour ) {
     time_t now = time(nullptr);                // Get encoded date, time.
     string nowstring = ctime(&now);            // Convert to string form.
@@ -88,7 +88,7 @@ today() {
 }
 
 // -------------------------------------------------------------------
-// Store the current time in hour and return a pointer to it.   
+// Store the current time in hour and return a pointer to it.
 //      hour format is: "10:15:55"
 // -------------------------------------------------------------------
 string
