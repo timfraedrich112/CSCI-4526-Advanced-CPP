@@ -875,7 +875,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "P1"
+			"value" : "P5"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1295,6 +1295,42 @@
 		},
 		{
 			"name" : "P1_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP"
+		},
+		{
+			"name" : "P5_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/cmake-build-debug"
+		},
+		{
+			"name" : "P5_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "P5_SOURCE_DIR",
 			"properties" : 
 			[
 				{

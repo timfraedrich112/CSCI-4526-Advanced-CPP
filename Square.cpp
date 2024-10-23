@@ -17,16 +17,14 @@ State::State(char input)
 
 void State::Mark(char ch) {
     if (fixed) {
-        std::cout << "Error: Cannot mark fixed square." << std::endl;
+        cout << "Error: Cannot mark fixed square." << endl;
         return;  // Prevent marking the value
     }
     value = ch;
-    numbers = 0;  // Reset possibilities after marking
 }
 
 std::ostream& State::Print(std::ostream& out) {
-    out << "Value: " << value << "\t\t";
-    out << "Fixed:  " << std::boolalpha << fixed << '\t';
+    out << "Value: " << value << "    ";
     out << "Possibilities: ";
     short num = numbers;
     for (int k = 1; k <= 9; ++k) {
@@ -34,6 +32,7 @@ std::ostream& State::Print(std::ostream& out) {
         if (num & 1) out << k;
         else out << '-';
     }
+    out << "\tFixed:  " << boolalpha << fixed;
     return out;
 }
 
@@ -41,8 +40,6 @@ Square::Square(char value, short inputRow, short inputColumn)
     : s(value), row(inputRow), column(inputColumn) {
     std::cout << "Square (" << row << ", " << column << ") created" << std::endl;
 }
-
-
 
 Square::~Square() {
     std::cout << "Deleting Square (" << row << ", " << column << ")" << std::endl;
@@ -53,14 +50,13 @@ void Square::Mark(char ch) {
     Shoop(ch);
 }
 
-std::ostream& Square::Print(std::ostream& out) {
-    out << "Square: (" << row << ", " << column << ") \t" << s << '\t';
-    return out;
-}
-
 void Square::Shoop(char val) {
     for (Cluster* cluster : clusters) {
         cluster->Shoop(val);  // Call Shoop function for each Cluster the square belongs to
     }
 }
 
+std::ostream& Square::Print(std::ostream& out) {
+    out << "(" << row << ", " << column << ") \t" << s << '\t';
+    return out;
+}

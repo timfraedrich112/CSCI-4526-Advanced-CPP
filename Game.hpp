@@ -17,6 +17,7 @@ private:
     char gameType;
     short gameSize;
     ifstream& in;
+    void Mark();
 public:
     Game(ifstream& inputFile);
     ~Game();

@@ -23,6 +23,7 @@ public:
 
     short getNumbers() { return numbers; }
     char getValue() { return value; }
+    bool isFixed() { return fixed; }
     void setNumbers(short num) { numbers = num; }  // Setter for numbers
 
 };
@@ -47,7 +48,7 @@ public:
     std::ostream& Print(std::ostream& out);  // Print function
 
     // Function to add a Cluster pointer to the vector of clusters
-    inline void addCluster(Cluster* cluster) { clusters.push_back(cluster); }
+    void addCluster(Cluster* cluster) { clusters.push_back(cluster); }
 
     // Function to loop through all Clusters and call Cluster::Shoop()
     void Shoop(char val);

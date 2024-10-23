@@ -14,7 +14,7 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="P1" targetName="P1" />
+      <config projectName="P5" targetName="P5" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -24,10 +24,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2536725f-99a3-4534-ac8f-d3da2c4b0fba" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Board.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Square.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Square.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Square.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Square.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-678b22802e517373e692.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-9fa084bb5bad44c50204.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-10-05T01-15-39-0234.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-P1-Debug-9688f776394fd66787d7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +78,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;CMake Application.P1.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.P5.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
@@ -85,12 +102,21 @@
       <recent name="C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\P2" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="P1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\puz1.txt C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\output.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P1" TARGET_NAME="P1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P1" RUN_TARGET_NAME="P1">
+  <component name="RunManager" selected="CMake Application.P5">
+    <configuration name="P1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\puz1.txt C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\output.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P5" TARGET_NAME="P1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P5" RUN_TARGET_NAME="P1">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="P5" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\puz1.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P5" TARGET_NAME="P5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P5" RUN_TARGET_NAME="P5">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.P1" />
+      <item itemvalue="CMake Application.P5" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -115,6 +141,11 @@
       <workItem from="1728089887063" duration="1218000" />
       <workItem from="1728408625472" duration="7052000" />
       <workItem from="1728582762082" duration="1759000" />
+      <workItem from="1729007201176" duration="72000" />
+      <workItem from="1729007292203" duration="1544000" />
+      <workItem from="1729104609802" duration="1007000" />
+      <workItem from="1729539365598" duration="7000" />
+      <workItem from="1729642621298" duration="4876000" />
     </task>
     <servers />
   </component>

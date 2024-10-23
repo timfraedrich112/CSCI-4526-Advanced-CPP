@@ -18,6 +18,14 @@ Board::Board(ifstream& inputFile, char type) : in(inputFile) {
 
     // Create clusters
     makeClusters(); // Call to create clusters
+    // Shoop all fixed values
+    for (int j = 1; j <= n; ++j) {
+        for (int k = 1; k <= n; ++k) {
+            if (Sub(j,k).getState().isFixed()) {
+                Sub(j, k).Shoop(Sub(j,k).getState().getValue());
+            }
+        }
+    }
 
     cout << "Board constructor finished" << endl;
 }
@@ -36,6 +44,9 @@ Board::~Board() {
 void Board::makeClusters() {
     for (short j = 0; j < 9; ++j) {
         createRow(j);        // Create row clusters
+    }
+
+    for (short j = 0; j < 9; ++j) {
         createColumn(j);     // Create column clusters
     }
 
@@ -52,7 +63,11 @@ void Board::createRow(short j) {
     for (int n = 0; n < 9; ++n) {
         rowSquares[n] = &Sub(j + 1, n + 1); // Fill with pointers to squares in the row
     }
-    clusters.push_back(new Cluster(ClusterT::Row, rowSquares));
+    Cluster* clusterCreated = new Cluster(ClusterT::Row, rowSquares);
+    clusters.push_back(clusterCreated);
+    for (int n = 0; n < 9; ++n) {
+        Sub(j + 1, n + 1).addCluster(clusterCreated);
+    }
 }
 
 // Function to create a column cluster
@@ -61,7 +76,11 @@ void Board::createColumn(short k) {
     for (int n = 0; n < 9; ++n) {
         colSquares[n] = &Sub(n + 1, k + 1); // Fill with pointers to squares in the column
     }
-    clusters.push_back(new Cluster(ClusterT::Column, colSquares));
+    Cluster* clusterCreated = new Cluster(ClusterT::Column, colSquares);
+    clusters.push_back(clusterCreated);
+    for (int n = 0; n < 9; ++n) {
+        Sub(n + 1, k + 1).addCluster(clusterCreated);
+    }
 }
 
 // Function to create a box cluster
@@ -73,7 +92,13 @@ void Board::createBox(short j, short k) {
             boxSquares[index++] = &Sub(j * 3 + n + 1, k * 3 + l + 1); // Fill with pointers to squares in the box
         }
     }
-    clusters.push_back(new Cluster(ClusterT::Box, boxSquares));
+    Cluster* clusterCreated = new Cluster(ClusterT::Box, boxSquares);
+    clusters.push_back(clusterCreated);
+    for (short n = 0; n < 3; ++n) {
+        for (short l = 0; l < 3; ++l) {
+            Sub(j * 3 + n + 1, k * 3 + l + 1).addCluster(clusterCreated);
+        }
+    }
 }
 
 // Print to print the 27 clusters
