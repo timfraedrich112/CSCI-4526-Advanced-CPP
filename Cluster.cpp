@@ -19,7 +19,8 @@ void Cluster::Shoop(char val) {
         if (squares[i]) {  // Check if the Square pointer is not null
             // Access the State of the square to eliminate the possibility
             State& state = squares[i]->getState();  //additional function: needs the get the State to work
-            state.setNumbers(state.getNumbers() & ~(1 << intVal)); //additional function: needs the setNumber to work
+            //state.setNumbers(state.getNumbers() & ~(1 << intVal)); //additional function: needs the setNumber to work
+            state.UpdateNumbers(intVal);
         }
     }
 }

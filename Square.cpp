@@ -23,6 +23,10 @@ void State::Mark(char ch) {
     value = ch;
 }
 
+void State::UpdateNumbers(int val) {
+    numbers &= ~(1 << val);
+}
+
 std::ostream& State::Print(std::ostream& out) {
     out << "Value: " << value << "    ";
     out << "Possibilities: ";

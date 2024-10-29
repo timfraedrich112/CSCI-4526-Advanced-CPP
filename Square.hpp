@@ -18,13 +18,13 @@ public:
     State(char input);
     ~State() = default;
     void Mark(char ch);
+    void UpdateNumbers(int val);
     std::ostream& Print(std::ostream& out);
 
 
     short getNumbers() { return numbers; }
     char getValue() { return value; }
     bool isFixed() { return fixed; }
-    void setNumbers(short num) { numbers = num; }  // Setter for numbers
 
 };
 
