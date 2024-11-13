@@ -14,6 +14,7 @@ private:
     const string legalCodes = "tTdDsS";
     const string legalSelections = "mMuUrRsSlLqQ";
     Board* gameBoard;
+    DiagBoard* gameDiagBoard;
     char gameType;
     short gameSize;
     ifstream& in;

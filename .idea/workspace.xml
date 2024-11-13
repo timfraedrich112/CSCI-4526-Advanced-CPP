@@ -25,11 +25,20 @@
   <component name="ChangeListManager">
     <list default="true" id="2536725f-99a3-4534-ac8f-d3da2c4b0fba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Board.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Board.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cluster.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Square.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Square.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Square.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Square.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Board.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Board.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Cluster.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Cluster.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Game.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Game.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Square.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Square.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/P5.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/P5.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
@@ -96,7 +105,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="P5" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\puz1.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P5" TARGET_NAME="P5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P5" RUN_TARGET_NAME="P5">
+    <configuration name="P5" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\puzd-1.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P5" TARGET_NAME="P5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P5" RUN_TARGET_NAME="P5">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -137,7 +146,14 @@
       <workItem from="1729789520483" duration="8000" />
       <workItem from="1729797465748" duration="135000" />
       <workItem from="1730211553093" duration="115000" />
-      <workItem from="1730224772083" duration="810000" />
+      <workItem from="1730224772083" duration="1188000" />
+      <workItem from="1730232460275" duration="1562000" />
+      <workItem from="1730314828673" duration="12000" />
+      <workItem from="1730399345848" duration="4000" />
+      <workItem from="1730776844960" duration="11000" />
+      <workItem from="1731369414294" duration="5136000" />
+      <workItem from="1731435779919" duration="5641000" />
+      <workItem from="1731521746106" duration="1325000" />
     </task>
     <servers />
   </component>

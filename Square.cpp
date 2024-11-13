@@ -11,7 +11,7 @@ State::State(char input)
         numbers = 0;
         fixed = true;
     } else {
-        std::cout << "Error: Invalid input character '" << input << "' for State." << std::endl;
+        cout << "Error: Invalid input character '" << input << "' for State." << endl;
     }
 }
 
@@ -42,11 +42,11 @@ std::ostream& State::Print(std::ostream& out) {
 
 Square::Square(char value, short inputRow, short inputColumn)
     : s(value), row(inputRow), column(inputColumn) {
-    std::cout << "Square (" << row << ", " << column << ") created" << std::endl;
+    cout << "Square (" << row << ", " << column << ") created" << endl;
 }
 
 Square::~Square() {
-    std::cout << "Deleting Square (" << row << ", " << column << ")" << std::endl;
+    cout << "Deleting Square (" << row << ", " << column << ")" << endl;
 }
 
 void Square::Mark(char ch) {

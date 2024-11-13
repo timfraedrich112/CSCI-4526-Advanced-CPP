@@ -4,13 +4,20 @@
 
 Game::Game(ifstream& inputFile) : in(inputFile) {
     in >> gameType;
-    gameBoard = new Board(in, gameType);
     if (legalCodes.find(gameType) == string::npos) fatal(string("Invalid game type code: ") += gameType);
-    cout << *gameBoard << endl; //test print
+
+    if (tolower(gameType) == 'd') {
+        gameDiagBoard = new DiagBoard(in, gameType, 29);
+        cout << *gameDiagBoard << endl; //test print
+    } else {
+        gameBoard = new Board(in, gameType);
+        cout << *gameBoard << endl; //test print
+    }
+
     Run();
 }
 
-Game::~Game() { delete gameBoard; }
+Game::~Game() { delete gameBoard; delete gameDiagBoard; }
 
 void Game::Run() {
     char selection;
@@ -63,6 +70,11 @@ void Game::Mark() {
     }
 
     //Mark square and output updated board
-    gameBoard->Sub(x - '0', y - '0').Mark(value);
-    cout << *gameBoard << endl;
+    if (tolower(gameType) == 'd') {
+        gameDiagBoard->Sub(x - '0', y - '0').Mark(value);
+        cout << *gameDiagBoard << endl; //test print
+    } else {
+        gameBoard->Sub(x - '0', y - '0').Mark(value);
+        cout << *gameBoard << endl;
+    }
 }

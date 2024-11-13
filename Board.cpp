@@ -5,12 +5,14 @@
 // Step 2: Declare a static array of three const strings
 static const string clusterTypeStrings[3] = {"Box", "Row", "Column"};
 
-Board::Board(ifstream& inputFile, char type) : in(inputFile) {
+Board::Board(ifstream& inputFile, char type, int clusterCount) : in(inputFile) {
     cout << "Board constructor started" << endl;
 
     if (tolower(type) == 't' || tolower(type) == 'd') n = 9;
     else if (tolower(type == 's')) n = 6;
     else fatal(string("Invalid type: ") += type);
+
+    //initialize normal vs diag board
 
     bd = new Square[n * n];
     unmarked = n * n;
@@ -19,10 +21,12 @@ Board::Board(ifstream& inputFile, char type) : in(inputFile) {
     // Create clusters
     makeClusters(); // Call to create clusters
     // Shoop all fixed values
-    for (int j = 1; j <= n; ++j) {
-        for (int k = 1; k <= n; ++k) {
-            if (Sub(j,k).getState().isFixed()) {
-                Sub(j, k).Shoop(Sub(j,k).getState().getValue());
+    if (tolower(type) != 'd') { //will do for d in DiagBoard's constructor (waiting for extra clusters)
+        for (int j = 1; j <= n; ++j) {
+            for (int k = 1; k <= n; ++k) {
+                if (Sub(j,k).getState().isFixed()) {
+                    Sub(j, k).Shoop(Sub(j,k).getState().getValue());
+                }
             }
         }
     }
@@ -39,7 +43,6 @@ Board::~Board() {
         delete cluster;
     }
 }
-
 
 void Board::makeClusters() {
     for (short j = 0; j < 9; ++j) {
@@ -144,3 +147,55 @@ Square& Board::Sub(int row, int column) {
     return bd[n * (row - 1) + (column - 1)];
 }
 
+DiagBoard::DiagBoard(ifstream& in, char type, int clusterCount): Board(in, type, clusterCount) {
+    cout << "DiagBoard constructor started" << endl;
+    //add diagonal clusters
+    createDiagonals();
+
+    //shoop all squares
+    for (int j = 1; j <= 9; ++j) {
+        for (int k = 1; k <= 9; ++k) {
+            if (Sub(j,k).getState().isFixed()) {
+                Sub(j, k).Shoop(Sub(j,k).getState().getValue());
+            }
+        }
+    }
+    cout << "DiagBoard constructor finished" << endl;
+}
+
+void DiagBoard::createDiagonals() {
+    //first diagonal (top left to bottom right)
+    Square* diagSquares[9]; // Local array for squares
+    for (int n = 0; n < 9; ++n) {
+        diagSquares[n] = &Sub(n + 1, n + 1); // Fill with pointers to squares in the diagonal
+    }
+    Cluster* clusterCreated = new Cluster(ClusterT::Diagonal, diagSquares);
+    clusters.push_back(clusterCreated);
+    for (int n = 0; n < 9; ++n) {
+        Sub(n + 1, n + 1).addCluster(clusterCreated);
+    }
+
+    //second diagonal (top right to bottom left)
+    int m = 9;
+    for (int n = 0; n < 9; ++n) {
+        diagSquares[n] = &Sub(n + 1, m); // Fill with pointers to squares in the diagonal
+        m--;
+    }
+    clusterCreated = new Cluster(ClusterT::Diagonal, diagSquares);
+    clusters.push_back(clusterCreated);
+    m = 9;
+    for (int n = 0; n < 9; ++n) {
+        Sub(n + 1, m).addCluster(clusterCreated);
+        m--;
+    }
+}
+
+DiagBoard::~DiagBoard() {
+    cout << "Deleting board" << endl;
+    delete[] bd;
+
+    // Clean up clusters
+    for (Cluster* cluster : clusters) {
+        delete cluster;
+    }
+}

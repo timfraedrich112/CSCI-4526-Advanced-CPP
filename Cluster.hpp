@@ -11,10 +11,11 @@ enum class ClusterT {   //ClusterType is needed to clearly differentiate between
 	                       //clusters in the Sudoku-like game (Rows, Columns, and Boxes)
     Row,
     Column,
-    Box
+    Box,
+    Diagonal
 };
 
-static const string clusterTypeNames[3] = {"Row", "Column", "Box"};
+static const string clusterTypeNames[4] = {"Row", "Column", "Box", "Diagonal"};
 
 class Cluster {
 private:

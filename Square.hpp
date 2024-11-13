@@ -61,4 +61,3 @@ public:
 inline std::ostream& operator<<(std::ostream& out, Square& s) { return s.Print(out); }
 
 #endif  // SQUARE_HPP
-
