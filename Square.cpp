@@ -11,16 +11,20 @@ State::State(char input)
         numbers = 0;
         fixed = true;
     } else {
-        cout << "Error: Invalid input character '" << input << "' for State." << endl;
+        throw std::invalid_argument("Invalid input character for State.");
     }
 }
 
 void State::Mark(char ch) {
-    if (fixed) {
-        cout << "Error: Cannot mark fixed square." << endl;
-        return;  // Prevent marking the value
+    try {
+        if (fixed) {
+            throw std::logic_error("Cannot mark fixed square.");
+        }
+        value = ch;
+    } catch (const std::logic_error& e) {
+        std::cout << "Error: " << e.what() << std::endl;
+        throw;
     }
-    value = ch;
 }
 
 void State::UpdateNumbers(int val) {
@@ -36,27 +40,32 @@ std::ostream& State::Print(std::ostream& out) {
         if (num & 1) out << k;
         else out << '-';
     }
-    out << "\tFixed:  " << boolalpha << fixed;
+    out << "\tFixed:  " << std::boolalpha << fixed;
     return out;
 }
 
 Square::Square(char value, short inputRow, short inputColumn)
     : s(value), row(inputRow), column(inputColumn) {
-    cout << "Square (" << row << ", " << column << ") created" << endl;
+    std::cout << "Square (" << row << ", " << column << ") created" << std::endl;
 }
 
 Square::~Square() {
-    cout << "Deleting Square (" << row << ", " << column << ")" << endl;
+    std::cout << "Deleting Square (" << row << ", " << column << ")" << std::endl;
 }
 
 void Square::Mark(char ch) {
-    s.Mark(ch);
-    Shoop(ch);
+    try {
+        s.Mark(ch);
+        Shoop(ch);
+    } catch (const std::exception& e) {
+        std::cout << "Error while marking square: " << e.what() << std::endl;
+        throw;
+    }
 }
 
 void Square::Shoop(char val) {
     for (Cluster* cluster : clusters) {
-        cluster->Shoop(val);  // Call Shoop function for each Cluster the square belongs to
+        cluster->Shoop(val);
     }
 }
 
@@ -64,3 +73,5 @@ std::ostream& Square::Print(std::ostream& out) {
     out << "(" << row << ", " << column << ") \t" << s << '\t';
     return out;
 }
+
+

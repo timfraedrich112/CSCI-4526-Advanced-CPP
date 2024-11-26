@@ -12,7 +12,8 @@ enum class ClusterT {   //ClusterType is needed to clearly differentiate between
     Row,
     Column,
     Box,
-    Diagonal
+	Diagonal
+
 };
 
 static const string clusterTypeNames[4] = {"Row", "Column", "Box", "Diagonal"};
@@ -34,4 +35,4 @@ public:
 // Overload the << operator for Cluster
 inline std::ostream& operator<<(std::ostream& out, Cluster& c) { return c.Print(out); }
 
-#endif  // CLUSTER_HPP
+#endif  //

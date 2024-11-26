@@ -21,8 +21,8 @@
 #include <utility>
 
 #include <cmath>
-#include <ctime>        
-#include <cctype>      // for isspace() and isdigit()  
+#include <ctime>
+#include <cctype>      // for isspace() and isdigit()
 
 //#include <cstdio>    // for NULL
 //#include <cstring>
@@ -34,8 +34,8 @@ using namespace std;
 // -------------------------------------------------------------------
 // Macros for debugging.
 // -------------------------------------------------------------------
-#define DUMPp(p) "\n" <<"    " #p " @ " <<&p <<"    value = " <<p <<"    " #p " --> " <<*p 
-#define DUMPv(k) "\n" <<"    " #k " @ " <<&k <<"    value = " <<k 
+#define DUMPp(p) "\n" <<"    " #p " @ " <<&p <<"    value = " <<p <<"    " #p " --> " <<*p
+#define DUMPv(k) "\n" <<"    " #k " @ " <<&k <<"    value = " <<k
 
 // -------------------------------------------------------------------
 // I/O Extension.
@@ -49,7 +49,7 @@ ostream& general(ostream& os);   // Use: cout <<fixed <<x <<general<<y;
 // -------------------------------------------------------------------
 void     fbanner( ostream& fout );
 void     banner();
-void     bye( void );                                    
+void     bye( void );
 
 // -------------------------------------------------------------------
 // Error handling ----------------------------------------------------

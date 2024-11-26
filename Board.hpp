@@ -25,7 +25,7 @@ protected:
 public:
     Square& Sub(int row, int column);
     Board(ifstream& in, char type, int clusterCount = 27);
-    ~Board();
+    virtual ~Board();
     ostream& Print(ostream& out);
 };
 
@@ -40,3 +40,5 @@ public:
 };
 
 #endif // BOARD_HPP
+
+
