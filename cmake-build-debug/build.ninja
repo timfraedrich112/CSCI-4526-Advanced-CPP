@@ -56,6 +56,13 @@ build CMakeFiles/P5.dir/Board.cpp.obj: CXX_COMPILER__P5_unscanned_Debug C$:/User
   OBJECT_DIR = CMakeFiles\P5.dir
   OBJECT_FILE_DIR = CMakeFiles\P5.dir
 
+build CMakeFiles/P5.dir/Canvas.cpp.obj: CXX_COMPILER__P5_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/Canvas.cpp || cmake_object_order_depends_target_P5
+  DEP_FILE = CMakeFiles\P5.dir\Canvas.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/.
+  OBJECT_DIR = CMakeFiles\P5.dir
+  OBJECT_FILE_DIR = CMakeFiles\P5.dir
+
 build CMakeFiles/P5.dir/Cluster.cpp.obj: CXX_COMPILER__P5_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/Cluster.cpp || cmake_object_order_depends_target_P5
   DEP_FILE = CMakeFiles\P5.dir\Cluster.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
@@ -70,8 +77,22 @@ build CMakeFiles/P5.dir/Game.cpp.obj: CXX_COMPILER__P5_unscanned_Debug C$:/Users
   OBJECT_DIR = CMakeFiles\P5.dir
   OBJECT_FILE_DIR = CMakeFiles\P5.dir
 
+build CMakeFiles/P5.dir/GridChar.cpp.obj: CXX_COMPILER__P5_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/GridChar.cpp || cmake_object_order_depends_target_P5
+  DEP_FILE = CMakeFiles\P5.dir\GridChar.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/.
+  OBJECT_DIR = CMakeFiles\P5.dir
+  OBJECT_FILE_DIR = CMakeFiles\P5.dir
+
 build CMakeFiles/P5.dir/main.cpp.obj: CXX_COMPILER__P5_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/main.cpp || cmake_object_order_depends_target_P5
   DEP_FILE = CMakeFiles\P5.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/.
+  OBJECT_DIR = CMakeFiles\P5.dir
+  OBJECT_FILE_DIR = CMakeFiles\P5.dir
+
+build CMakeFiles/P5.dir/MixedChar.cpp.obj: CXX_COMPILER__P5_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/MixedChar.cpp || cmake_object_order_depends_target_P5
+  DEP_FILE = CMakeFiles\P5.dir\MixedChar.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   INCLUDES = -IC:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/.
   OBJECT_DIR = CMakeFiles\P5.dir
@@ -91,6 +112,13 @@ build CMakeFiles/P5.dir/tools.cpp.obj: CXX_COMPILER__P5_unscanned_Debug C$:/User
   OBJECT_DIR = CMakeFiles\P5.dir
   OBJECT_FILE_DIR = CMakeFiles\P5.dir
 
+build CMakeFiles/P5.dir/Viewer.cpp.obj: CXX_COMPILER__P5_unscanned_Debug C$:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/Viewer.cpp || cmake_object_order_depends_target_P5
+  DEP_FILE = CMakeFiles\P5.dir\Viewer.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/.
+  OBJECT_DIR = CMakeFiles\P5.dir
+  OBJECT_FILE_DIR = CMakeFiles\P5.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target P5
@@ -99,7 +127,7 @@ build CMakeFiles/P5.dir/tools.cpp.obj: CXX_COMPILER__P5_unscanned_Debug C$:/User
 #############################################
 # Link the executable P5.exe
 
-build P5.exe: CXX_EXECUTABLE_LINKER__P5_Debug CMakeFiles/P5.dir/Board.cpp.obj CMakeFiles/P5.dir/Cluster.cpp.obj CMakeFiles/P5.dir/Game.cpp.obj CMakeFiles/P5.dir/main.cpp.obj CMakeFiles/P5.dir/Square.cpp.obj CMakeFiles/P5.dir/tools.cpp.obj
+build P5.exe: CXX_EXECUTABLE_LINKER__P5_Debug CMakeFiles/P5.dir/Board.cpp.obj CMakeFiles/P5.dir/Canvas.cpp.obj CMakeFiles/P5.dir/Cluster.cpp.obj CMakeFiles/P5.dir/Game.cpp.obj CMakeFiles/P5.dir/GridChar.cpp.obj CMakeFiles/P5.dir/main.cpp.obj CMakeFiles/P5.dir/MixedChar.cpp.obj CMakeFiles/P5.dir/Square.cpp.obj CMakeFiles/P5.dir/tools.cpp.obj CMakeFiles/P5.dir/Viewer.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\P5.dir

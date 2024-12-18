@@ -1,18 +1,14 @@
 //Board.cpp
-//Tim Fraedrich & Chidi Nna
 #include "Board.hpp"
 
-// Step 2: Declare a static array of three const strings
-static const string clusterTypeStrings[3] = {"Box", "Row", "Column"};
-
-Board::Board(ifstream& inputFile, char type,  int clusterCount) : in(inputFile) {
+Board::Board(ifstream& inputFile, char type, int clusterCount)
+    : in(inputFile), n(0), bd(nullptr), unmarked(0) {
     cout << "Board constructor started" << endl;
 
-    // Check for valid game type
     if (tolower(type) == 't' || tolower(type) == 'd') {
-        n = 9;
+        n = 9; // Traditional board size
     } else if (tolower(type) == 's') {
-        n = 6;
+        n = 6; // Sixy board size
     } else {
         fatal("Stream Error: Invalid game type: " + string(1, type));
     }
@@ -21,11 +17,14 @@ Board::Board(ifstream& inputFile, char type,  int clusterCount) : in(inputFile) 
     unmarked = n * n;
     GetPuzzle();
 
-    // Create clusters
-    makeClusters();
-
-    // Shoop all fixed values
+    makeClusters(); // Calls derived class's implementation
     for (int j = 1; j <= n; ++j) {
+        if (tolower(type) == 's') {
+            Sub(j, 1).Shoop('7');
+            Sub(j, 1).Shoop('8');
+            Sub(j, 1).Shoop('9');
+        }
+
         for (int k = 1; k <= n; ++k) {
             if (Sub(j, k).getState().isFixed()) {
                 Sub(j, k).Shoop(Sub(j, k).getState().getValue());
@@ -36,57 +35,53 @@ Board::Board(ifstream& inputFile, char type,  int clusterCount) : in(inputFile) 
     cout << "Board constructor finished" << endl;
 }
 
-Board::~Board() {
-    cout << "Deleting board" << endl;
-    delete[] bd;
-
-    // Clean up clusters
-    for (Cluster* cluster : clusters) {
-        delete cluster;
-    }
-}
-
 void Board::makeClusters() {
-    for (short j = 0; j < 9; ++j) {
+    for (short j = 0; j < n; ++j) {
         createRow(j);
     }
-    for (short j = 0; j < 9; ++j) {
+
+    for (short j = 0; j < n; ++j) {
         createColumn(j);
     }
-    for (short j = 0; j < 3; ++j) {
-        for (short k = 0; k < 3; ++k) {
-            createBox(j, k);
+    if (n == 9) {
+        for (short j = 0; j < 3; ++j) {
+            for (short k = 0; k < 3; ++k) {
+                createBox(j, k);  // 9x9 traditional board, create boxes
+            }
         }
     }
+
+    // Only for SixyBoard (6x6 board) create Vertical and Horizontal Boxes
+    if (n == 6) {
+        static_cast<SixyBoard*>(this)->createVBoxes();  // Call SixyBoard-specific function
+        static_cast<SixyBoard*>(this)->createHBoxes();  // Call SixyBoard-specific function
+    }
 }
 
-// Function to create a row cluster
 void Board::createRow(short j) {
-    Square* rowSquares[9];
-    for (int n = 0; n < 9; ++n) {
-        rowSquares[n] = &Sub(j + 1, n + 1);
+    Square* rowSquares[n];
+    for (int x = 0; x < n; ++x) {
+        rowSquares[x] = &Sub(j + 1, x + 1);
     }
-    Cluster* clusterCreated = new Cluster(ClusterT::Row, rowSquares);
+    Cluster* clusterCreated = new Cluster(ClusterT::Row, n, rowSquares);
     clusters.push_back(clusterCreated);
-    for (int n = 0; n < 9; ++n) {
-        Sub(j + 1, n + 1).addCluster(clusterCreated);
+    for (int x = 0; x < n; ++x) {
+        Sub(j + 1, x + 1).addCluster(clusterCreated);
     }
 }
 
-// Function to create a column cluster
 void Board::createColumn(short k) {
-    Square* colSquares[9];
-    for (int n = 0; n < 9; ++n) {
-        colSquares[n] = &Sub(n + 1, k + 1);
+    Square* colSquares[n];
+    for (int x = 0; x < n; ++x) {
+        colSquares[x] = &Sub(x + 1, k + 1);
     }
-    Cluster* clusterCreated = new Cluster(ClusterT::Column, colSquares);
+    Cluster* clusterCreated = new Cluster(ClusterT::Column, n, colSquares);
     clusters.push_back(clusterCreated);
-    for (int n = 0; n < 9; ++n) {
-        Sub(n + 1, k + 1).addCluster(clusterCreated);
+    for (int x = 0; x < n; ++x) {
+        Sub(x + 1, k + 1).addCluster(clusterCreated);
     }
 }
 
-// Function to create a box cluster
 void Board::createBox(short j, short k) {
     Square* boxSquares[9];
     int index = 0;
@@ -95,7 +90,7 @@ void Board::createBox(short j, short k) {
             boxSquares[index++] = &Sub(j * 3 + n + 1, k * 3 + l + 1);
         }
     }
-    Cluster* clusterCreated = new Cluster(ClusterT::Box, boxSquares);
+    Cluster* clusterCreated = new Cluster(ClusterT::Box, n, boxSquares);
     clusters.push_back(clusterCreated);
     for (short n = 0; n < 3; ++n) {
         for (short l = 0; l < 3; ++l) {
@@ -122,6 +117,17 @@ ostream& Board::Print(ostream& out) {
     return out;
 }
 
+
+char Board::getMarkChar(int row, int col) const {
+    //return 'X';
+    return Sub(row, col).getState().getValue();
+}
+
+string Board::getPossibilityString(int row, int col) const {
+    //return "Possibility String for row " + std::to_string(row) + ", col " + std::to_string(col);
+    return Sub(row, col).getPossibilities();
+}
+
 void Board::GetPuzzle() {
     char input;
     for (int j = 1; j <= n; ++j) {
@@ -136,7 +142,7 @@ void Board::GetPuzzle() {
                 fatal("Stream Error: Invalid character for square value: " + string(1, input));
             }
         }
-        if (!(in.get(input)) || input != '\n') {
+        if (!(in.get(input)) || (input != '\n' && input != '\r')) {
             fatal("Stream Error: Expected end of line after row " + to_string(j));
         }
     }
@@ -145,20 +151,23 @@ void Board::GetPuzzle() {
     }
 }
 
-Square& Board::Sub(int row, int column) {
+Square& Board::Sub(int row, int column) const {
     return bd[n * (row - 1) + (column - 1)];
 }
 
-DiagBoard::DiagBoard(ifstream& in, char type, int clusterCount): Board(in, type, clusterCount) {
-    cout << "DiagBoard constructor started" << endl;
-    //add diagonal clusters
-    createDiagonals();
+void Board::restoreBoard(Frame* f) const {
+    for (int j = 0; j < n * n; ++j) {
+        bd[j].setState(f->states[j]);
+    }
+}
 
-    //shoop all squares
+DiagBoard::DiagBoard(ifstream& inputFile, char type, int clusterCount): Board(inputFile, type, clusterCount) {
+    cout << "DiagBoard constructor started" << endl;
+    createDiagonals();
     for (int j = 1; j <= 9; ++j) {
         for (int k = 1; k <= 9; ++k) {
-            if (Sub(j,k).getState().isFixed()) {
-                Sub(j, k).Shoop(Sub(j,k).getState().getValue());
+            if (Sub(j, k).getState().isFixed()) {
+                Sub(j, k).Shoop(Sub(j, k).getState().getValue());
             }
         }
     }
@@ -166,24 +175,22 @@ DiagBoard::DiagBoard(ifstream& in, char type, int clusterCount): Board(in, type,
 }
 
 void DiagBoard::createDiagonals() {
-    //first diagonal (top left to bottom right)
-    Square* diagSquares[9]; // Local array for squares
+    Square* diagSquares[9];
     for (int n = 0; n < 9; ++n) {
-        diagSquares[n] = &Sub(n + 1, n + 1); // Fill with pointers to squares in the diagonal
+        diagSquares[n] = &Sub(n + 1, n + 1);
     }
-    Cluster* clusterCreated = new Cluster(ClusterT::Diagonal, diagSquares);
+    Cluster* clusterCreated = new Cluster(ClusterT::Diagonal, n, diagSquares);
     clusters.push_back(clusterCreated);
     for (int n = 0; n < 9; ++n) {
         Sub(n + 1, n + 1).addCluster(clusterCreated);
     }
 
-    //second diagonal (top right to bottom left)
     int m = 9;
     for (int n = 0; n < 9; ++n) {
-        diagSquares[n] = &Sub(n + 1, m); // Fill with pointers to squares in the diagonal
+        diagSquares[n] = &Sub(n + 1, m);
         m--;
     }
-    clusterCreated = new Cluster(ClusterT::Diagonal, diagSquares);
+    clusterCreated = new Cluster(ClusterT::Diagonal, n, diagSquares);
     clusters.push_back(clusterCreated);
     m = 9;
     for (int n = 0; n < 9; ++n) {
@@ -193,5 +200,67 @@ void DiagBoard::createDiagonals() {
 }
 
 DiagBoard::~DiagBoard() {
-    cout << "Deleting diag board" << endl;
+    cout << "Deleting DiagBoard" << endl;
+    delete[] bd;
+    for (Cluster* cluster : clusters) {
+        delete cluster;
+    }
 }
+
+TradBoard::TradBoard(ifstream& inputFile, char type, int clusterCount): Board(inputFile, type, clusterCount) {
+    cout << "TradBoard constructor started" << endl;
+    // (Add any other specific logic here if needed)
+    cout << "TradBoard constructor finished" << endl;
+}
+
+TradBoard::~TradBoard() {
+    cout << "Deleting TradBoard" << endl;
+    delete[] bd;
+    for (Cluster* cluster : clusters) {
+        delete cluster;
+    }
+}
+
+SixyBoard::SixyBoard(ifstream& inputFile, char type, int clusterCount): Board(inputFile, type, clusterCount) {
+	cout << "SixyBoard constructor started" << endl;
+    //createVBoxes();
+    //createHBoxes();
+    cout << "SixyBoard constructor finished" << endl;
+}
+
+void SixyBoard::createVBoxes() {
+    for (int i = 0; i < n; ++i) {
+        Square* vbox[n];
+        for (int j = 0; j < n; ++j) {
+            vbox[j] = &Sub(j + 1, i + 1); // Creating vertical boxes
+        }
+        Cluster* clusterCreated = new Cluster(ClusterT::VBox, n, vbox);
+        clusters.push_back(clusterCreated);
+        for (int j = 0; j < n; ++j) {
+            Sub(j + 1, i + 1).addCluster(clusterCreated);
+        }
+    }
+}
+
+void SixyBoard::createHBoxes() {
+    for (int i = 0; i < n; ++i) {
+        Square* hbox[n];
+        for (int j = 0; j < n; ++j) {
+            hbox[j] = &Sub(i + 1, j + 1); // Creating horizontal boxes
+        }
+        Cluster* clusterCreated = new Cluster(ClusterT::HBox, n, hbox);
+        clusters.push_back(clusterCreated);
+        for (int j = 0; j < n; ++j) {
+            Sub(i + 1, j + 1).addCluster(clusterCreated);
+        }
+    }
+}
+
+SixyBoard::~SixyBoard() {
+    cout << "Deleting SixyBoard" << endl;
+    delete[] bd;
+    for (Cluster* cluster : clusters) {
+        delete cluster;
+    }
+}
+

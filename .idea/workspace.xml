@@ -25,29 +25,33 @@
   <component name="ChangeListManager">
     <list default="true" id="2536725f-99a3-4534-ac8f-d3da2c4b0fba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program Output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Square.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Square.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Board.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Board.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cluster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cluster.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Square.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Square.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Square.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Square.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-b2ddbe464da9733d49ac.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-d8b8eb023e28f375fd80.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-10-15T15-46-56-0035.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-P5-Debug-734d6cdbeecf08476a76.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Board.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Board.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Cluster.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Cluster.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Game.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Game.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Square.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/Square.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P5.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/P5.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/P5.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puz1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puzd-1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools.hpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +116,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="P5" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\puzd-1.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P5" TARGET_NAME="P5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P5" RUN_TARGET_NAME="P5">
+    <configuration name="P5" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="C:\Users\timfr\Documents\GitHub\CSCI-4526-Advanced-CPP\puzd.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P5" TARGET_NAME="P5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P5" RUN_TARGET_NAME="P5">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -163,7 +167,11 @@
       <workItem from="1731521746106" duration="1858000" />
       <workItem from="1732641226392" duration="14000" />
       <workItem from="1732652362250" duration="2496000" />
-      <workItem from="1732655278665" duration="5000" />
+      <workItem from="1732655278665" duration="660000" />
+      <workItem from="1733850449765" duration="127000" />
+      <workItem from="1733851198096" duration="6753000" />
+      <workItem from="1734222208977" duration="265000" />
+      <workItem from="1734383548166" duration="10247000" />
     </task>
     <servers />
   </component>

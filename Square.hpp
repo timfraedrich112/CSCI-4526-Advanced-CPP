@@ -19,19 +19,15 @@ public:
     ~State() = default;
     void Mark(char ch);
     void UpdateNumbers(int val);
-    std::ostream& Print(std::ostream& out);
-
 
     short getNumbers() { return numbers; }
     char getValue() { return value; }
     bool isFixed() { return fixed; }
 
+    ostream& Print(ostream& out) const;
 };
 
-//prints all data in the State in a readable format
-inline std::ostream& operator<<(std::ostream& out, State& s) {
-    return s.Print(out);
-}
+inline std::ostream& operator<<(std::ostream& out, State& s) { return s.Print(out); }
 
 class Square {
 private:
@@ -45,19 +41,16 @@ public:
     ~Square();
 
     void Mark(char ch);  // Mark function to mark the square
-    std::ostream& Print(std::ostream& out);  // Print function
-
-    // Function to add a Cluster pointer to the vector of clusters
+    void Shoop(char val);
     void addCluster(Cluster* cluster) { clusters.push_back(cluster); }
 
-    // Function to loop through all Clusters and call Cluster::Shoop()
-    void Shoop(char val);
-
+    string getPossibilities();
     State& getState() { return s; }
+    void setState(const State newState) { s = newState; }
 
+    ostream& Print(ostream& out);  // Print function
 };
 
-// Inline operator to print Square object easily
 inline std::ostream& operator<<(std::ostream& out, Square& s) { return s.Print(out); }
 
-#endif  // SQUARE_HPP
+#endif SQUARE_HPP

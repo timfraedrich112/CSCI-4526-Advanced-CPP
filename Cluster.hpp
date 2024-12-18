@@ -7,32 +7,32 @@
 
 class Square;
 
-enum class ClusterT {   //ClusterType is needed to clearly differentiate between the three types of
-	                       //clusters in the Sudoku-like game (Rows, Columns, and Boxes)
+enum class ClusterT {
     Row,
     Column,
     Box,
-	Diagonal
-
+    Diagonal,
+    VBox,
+    HBox
 };
 
-static const string clusterTypeNames[4] = {"Row", "Column", "Box", "Diagonal"};
+static const string clusterTypeNames[6] = {"Row", "Column", "Box", "Diagonal", "VBox", "HBox"};
 
 class Cluster {
 private:
     ClusterT type;
+    int clusterSize;
     string typeName;
-    Square* squares[9];  // Array of Square pointers
+    Square** squares;  // Array of Square pointers
 
 public:
-    Cluster(ClusterT cl, Square* inputSquares[]);  // Constructor with Square
+    Cluster(ClusterT cl, int n, Square* inputSquares[]);  // Constructor with Square
     ~Cluster() = default;
 
     void Shoop(char val);
     std::ostream& Print(std::ostream& out);
 };
 
-// Overload the << operator for Cluster
 inline std::ostream& operator<<(std::ostream& out, Cluster& c) { return c.Print(out); }
 
-#endif  //
+#endif CLUSTER_HPP

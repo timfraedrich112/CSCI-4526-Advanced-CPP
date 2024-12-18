@@ -31,7 +31,7 @@ void State::UpdateNumbers(int val) {
     numbers &= ~(1 << val);
 }
 
-std::ostream& State::Print(std::ostream& out) {
+ostream& State::Print(ostream& out) const {
     out << "Value: " << value << "    ";
     out << "Possibilities: ";
     short num = numbers;
@@ -40,7 +40,7 @@ std::ostream& State::Print(std::ostream& out) {
         if (num & 1) out << k;
         else out << '-';
     }
-    out << "\tFixed:  " << std::boolalpha << fixed;
+    out << "\tFixed:  " << boolalpha << fixed;
     return out;
 }
 
@@ -69,9 +69,21 @@ void Square::Shoop(char val) {
     }
 }
 
+string Square::getPossibilities() {
+    string output = "";
+    short num = getState().getNumbers();
+    for (int k = 1; k <= 9; ++k) {
+        num >>= 1;
+        if (num & 1) output += to_string(k);
+        else output += '-';
+    }
+    return output;
+}
+
 std::ostream& Square::Print(std::ostream& out) {
     out << "(" << row << ", " << column << ") \t" << s << '\t';
     return out;
 }
+
 
 

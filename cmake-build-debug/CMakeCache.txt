@@ -260,6 +260,15 @@ P5_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 P5_SOURCE_DIR:STATIC=C:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP
 
+//Value Computed by CMake
+p8_BINARY_DIR:STATIC=C:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP/cmake-build-debug
+
+//Value Computed by CMake
+p8_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+p8_SOURCE_DIR:STATIC=C:/Users/timfr/Documents/GitHub/CSCI-4526-Advanced-CPP
+
 
 ########################
 # INTERNAL cache entries
